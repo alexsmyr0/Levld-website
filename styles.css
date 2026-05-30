@@ -157,8 +157,10 @@ footer small{color:var(--ink-soft);font-size:13px}
   .g1{width:380px;height:380px;top:-140px;right:-110px;opacity:.6}
   .g2{width:320px;height:320px;bottom:-160px;left:-90px;opacity:.55}
   h1{font-size:clamp(46px,11vw,68px);letter-spacing:-.035em}
+  h1 .m-break{display:block}
   .hero{padding:140px 0 60px}
   .hero-cta .btn-ghost{display:none}
+  .hero-trust{display:none}
   .showcase .wrap{grid-template-columns:1fr;gap:32px}
   .showcase .copy{text-align:center;order:2}
   .showcase .copy .p-full{display:none}
