@@ -70,9 +70,11 @@ section{position:relative;padding:120px 0}
 .showcase{background:var(--paper-2)}
 .showcase .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 .showcase .copy p{margin-top:24px;font-size:18px;line-height:1.6;color:var(--ink-soft);max-width:440px}
+.showcase .copy .p-short{display:none}
 .feature-list{margin-top:34px;display:flex;flex-direction:column;gap:16px}
 .feature-list li{list-style:none;display:flex;gap:14px;align-items:flex-start;font-size:16px;font-weight:500}
 .feature-list .ck{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-size:13px;font-weight:800;color:var(--ink)}
+.feature-list .short{display:none}
 
 /* iphone mock */
 .phone-stage{display:flex;justify-content:center;perspective:1600px}
@@ -152,10 +154,21 @@ footer small{color:var(--ink-soft);font-size:13px}
 .reveal.in{opacity:1;transform:none}
 
 @media(max-width:860px){
-  .showcase .wrap{grid-template-columns:1fr;gap:54px}
-  .showcase .copy{text-align:center}
+  .g1{width:500px;height:500px;top:-160px;right:-130px}
+  .g2{width:380px;height:380px;bottom:-170px;left:-100px}
+  .showcase .wrap{grid-template-columns:1fr;gap:32px}
+  .showcase .copy{text-align:center;order:2}
+  .showcase .copy .p-full{display:none}
+  .showcase .copy .p-short{display:block}
+  .showcase .phone-stage{order:1;position:relative}
+  .showcase .phone-stage::before{content:"";position:absolute;width:420px;height:420px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,185,61,.55),transparent 65%);filter:blur(60px);z-index:0;pointer-events:none}
+  .showcase .phone{position:relative;z-index:1;transform:scale(.77);transform-origin:center top;margin-bottom:-140px}
   .showcase .copy p,.perks{margin-left:auto;margin-right:auto}
-  .feature-list li{text-align:left}
+  .feature-list{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+  .feature-list li{text-align:left;background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 16px 9px 10px;font-size:14px;font-weight:600;gap:8px;align-items:center}
+  .feature-list .ck{width:20px;height:20px;font-size:11px}
+  .feature-list .full{display:none}
+  .feature-list .short{display:inline}
   section{padding:84px 0}
   .price-card{padding:44px 26px}
 }
