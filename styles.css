@@ -201,3 +201,6 @@ footer small{color:var(--ink-soft);font-size:13px}
   .showcase .phone .island{width:77px;height:22px;top:19px}
   .showcase .screen{border-radius:34px}
 }
+
+/* Honeypot: off-screen rather than display:none so naive bots still fill it. */
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}

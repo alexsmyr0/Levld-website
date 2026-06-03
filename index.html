@@ -140,13 +140,18 @@
           <label for="phone">Mobile <span class="opt">(optional)</span></label>
           <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 123-4567">
         </div>
+        <!-- Honeypot: hidden from users, bots tend to fill it. Server drops any submit with this set. -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+        </div>
         <button type="submit" class="btn pay-btn">Join the waitlist</button>
         <p class="form-error" id="formError" hidden></p>
       </form>
       <div class="waitlist-success" id="waitlistSuccess" hidden>
         <div class="success-icon">✓</div>
         <div class="success-title">You're on the list.</div>
-        <p>We'll email your 50% code at launch.</p>
+        <p>We'll email your 50% off shortly.</p>
       </div>
     </div>
   </div>

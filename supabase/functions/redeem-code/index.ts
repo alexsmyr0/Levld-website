@@ -36,8 +36,9 @@ Deno.serve(async (req) => {
 
   // Service-role client bypasses RLS. The triple WHERE (code + email + status='issued')
   // is the brute-force defense AND the double-redeem guard: a single atomic UPDATE that
-  // matches zero rows if the code is wrong, the email doesn't match the purchase, or it
-  // was already redeemed/revoked.
+  // matches zero rows if the code is wrong, the email doesn't match the one it was issued
+  // to, or it was already redeemed/revoked. Works the same for legacy 'lifetime' codes
+  // and the new 'waitlist_50' codes — offer_type on the row decides the entitlement.
   const admin = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
   const { data, error } = await admin
     .from("early_access_codes")
@@ -58,7 +59,8 @@ Deno.serve(async (req) => {
     return json({ error: "invalid or already-redeemed code" }, 400);
   }
 
-  // TODO(app-launch): upsert a lifetime entitlement for user.id into the entitlements
-  // table once the app's auth/entitlement schema lands, then key the paywall off it.
-  return json({ redeemed: true, user_id: user.id });
+  // TODO(app-launch): grant the entitlement for user.id based on data.offer_type
+  // ('waitlist_50' -> 50% off, legacy 'lifetime' -> free forever) once the app's
+  // auth/entitlement schema lands, then key the paywall off it.
+  return json({ redeemed: true, user_id: user.id, offer_type: data.offer_type });
 });
