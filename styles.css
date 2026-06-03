@@ -13,7 +13,7 @@
   --body:"Hanken Grotesk",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{
   font-family:var(--body);
   background:var(--paper);
@@ -162,7 +162,7 @@ footer small{color:var(--ink-soft);font-size:13px}
 @media(max-width:860px){
   .g1{width:380px;height:380px;top:-140px;right:-110px;opacity:.6}
   .g2{width:320px;height:320px;bottom:-160px;left:-90px;opacity:.55}
-  h1{font-size:clamp(46px,11vw,68px);letter-spacing:-.035em}
+  h1{font-size:clamp(32px,calc(13.7vw - 7.8px),46px);letter-spacing:-.035em}
   h1 .m-break{display:block}
   .hero{padding:140px 0 60px}
   .hero-cta .btn-ghost{display:none}
@@ -181,4 +181,10 @@ footer small{color:var(--ink-soft);font-size:13px}
 }
 @media(max-width:520px){
   .field-row{grid-template-columns:1fr}
+}
+@media(max-width:390px){
+  .nav-cta{font-size:14px;padding:10px 15px;border-width:1.5px}
+}
+@media(max-width:340px){
+  .hero{padding-top:112px}
 }
