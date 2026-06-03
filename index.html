@@ -33,10 +33,10 @@
       <h1>You are not lazy,<br><span class="accent">your dopamine <span class="m-break">is fried.</span></span></h1>
       <p>Screen time apps tell you how long you scrolled. Levld tells you what it cost your brain, and steps in before the scroll takes your whole day.</p>
       <div class="hero-cta">
-        <a href="#preorder"><button class="btn btn-primary">Reserve early access &nbsp;→</button></a>
+        <a href="#preorder"><button class="btn btn-primary">Join the waitlist &nbsp;→</button></a>
         <a href="#science"><button class="btn btn-ghost">See how it works</button></a>
       </div>
-      <div class="hero-trust">One-time $4.99 · No subscription · Founding price locked for life</div>
+      <div class="hero-trust">Free to join · Get 40% off when we launch</div>
     </div>
   </div>
   <div class="scroll-hint"><span>Scroll</span><span class="ln"></span></div>
@@ -104,26 +104,45 @@
   </div>
 </section>
 
-<!-- SECTION 4 — PREORDER -->
+<!-- SECTION 4 — WAITLIST -->
 <section class="preorder" id="preorder">
   <div class="wrap">
     <div class="reveal">
-      <div class="tag">Founding members</div>
+      <div class="tag">Early access</div>
       <div class="h2">Get in before<br>everyone else.</div>
-      <p class="pre-intro">Founding spots are limited. Lock yours in now and never pay a subscription.</p>
+      <p class="pre-intro">Join the waitlist now and get 40% off when Levld launches.</p>
     </div>
     <div class="price-card reveal">
-      <span class="badge">★ FOUNDING MEMBER</span>
-      <div class="price"><sup>$</sup>4.99</div>
-      <div class="price-sub">One-time. No subscription, ever</div>
+      <span class="badge">★ EARLY ACCESS</span>
+      <div class="card-heading">Free to join.</div>
       <ul class="perks">
         <li><span class="ck">✓</span>First in line the moment we launch</li>
-        <li><span class="ck">✓</span>Founding price locked, you'll never pay monthly</li>
+        <li><span class="ck">✓</span>40% off when we launch, our thank-you for being early</li>
         <li><span class="ck">✓</span>You're backing a small team building something new</li>
       </ul>
-      <p class="pay-note">We will email you a discount code that makes Levld <b>100% free</b></p>
-      <a href="https://buy.stripe.com/cNifZg6m6cgl3iC7GzaR200" class="btn pay-btn">Reserve early access</a>
-      <div class="scarce"><span class="dot"></span>Only 500 founding spots available</div>
+      <form id="waitlistForm" class="waitlist-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="firstName">First name</label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="lastName">Last name</label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+        </div>
+        <button type="submit" class="btn pay-btn">Join the waitlist</button>
+        <p class="form-error" id="formError" hidden></p>
+      </form>
+      <div class="waitlist-success" id="waitlistSuccess" hidden>
+        <div class="success-icon">✓</div>
+        <div class="success-title">You're on the list.</div>
+        <p>We'll email your 40% code at launch.</p>
+      </div>
     </div>
   </div>
 </section>

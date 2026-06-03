@@ -129,19 +129,27 @@ section{position:relative;padding:120px 0}
 .price-card{max-width:540px;margin:54px auto 0;background:#fff;border:1px solid var(--line);border-radius:30px;padding:54px 46px;box-shadow:0 40px 80px -40px rgba(22,19,14,.25);position:relative;overflow:hidden}
 .price-card::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--yellow)}
 .badge{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:700;font-size:13px;letter-spacing:.06em;padding:8px 18px;border-radius:100px;margin-bottom:26px}
-.price{font-family:var(--display);font-weight:800;font-size:78px;line-height:1;letter-spacing:-.03em}
-.price sup{font-size:34px;top:-.6em;font-weight:700}
-.price-sub{color:var(--ink-soft);font-size:16px;margin-top:8px}
-.perks{text-align:left;max-width:330px;margin:34px auto;display:flex;flex-direction:column;gap:14px}
+.card-heading{font-family:var(--display);font-weight:800;font-size:44px;line-height:1;letter-spacing:-.03em;margin-top:4px}
+.perks{text-align:left;max-width:330px;margin:30px auto;display:flex;flex-direction:column;gap:14px}
 .perks li{list-style:none;display:flex;gap:12px;font-size:15.5px;font-weight:500;align-items:center}
 .perks .ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-size:12px;font-weight:800}
 .pay-btn{width:100%;justify-content:center;background:var(--ink);color:var(--paper);font-size:17px;padding:19px}
 .pay-btn:hover{background:var(--yellow);color:var(--ink);transform:translateY(-2px)}
-.pay-note{margin:4px auto 20px;max-width:none;font-size:13px;line-height:1.55;color:var(--ink-soft);text-align:center}
-.pay-note b{color:var(--ink);font-weight:700}
-.scarce{margin-top:16px;display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--ink-soft)}
-.scarce .dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px rgba(255,185,61,.18);animation:pulse 2s infinite}
-.pay-note{margin-top:18px;font-size:13px;color:var(--ink-soft)}
+
+/* waitlist form */
+.waitlist-form{display:flex;flex-direction:column;gap:14px;margin-top:4px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:7px;text-align:left;min-width:0}
+.field label{font-size:13px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em}
+.field input{font-family:var(--body);font-size:16px;font-weight:500;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;width:100%;transition:border-color .2s,background .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.field input:focus{outline:none;border-color:var(--ink);background:#fff;box-shadow:0 0 0 4px rgba(22,19,14,.06)}
+.field input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px var(--paper) inset;-webkit-text-fill-color:var(--ink)}
+.form-error{margin:0;font-size:13.5px;color:#b04141;text-align:center;font-weight:600}
+.waitlist-form .pay-btn{margin-top:6px}
+.waitlist-success{display:flex;flex-direction:column;align-items:center;gap:12px;padding:14px 0 4px}
+.success-icon{width:58px;height:58px;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font-size:30px;font-weight:800;box-shadow:0 0 0 8px rgba(255,185,61,.18)}
+.success-title{font-family:var(--display);font-weight:800;font-size:26px;line-height:1.05;letter-spacing:-.02em}
+.waitlist-success p{color:var(--ink-soft);font-size:15.5px;line-height:1.5;max-width:320px;text-align:center;margin:0}
 
 footer{background:var(--paper);padding:40px 0 60px;text-align:center;border-top:1px solid var(--line)}
 footer .mark{justify-content:center;margin-bottom:12px}
@@ -168,5 +176,9 @@ footer small{color:var(--ink-soft);font-size:13px}
   .feature-list{display:none}
   .science .head p{display:none}
   section{padding:84px 0}
-  .price-card{padding:44px 26px}
+  .price-card{padding:44px 22px}
+  .card-heading{font-size:38px}
+}
+@media(max-width:520px){
+  .field-row{grid-template-columns:1fr}
 }
