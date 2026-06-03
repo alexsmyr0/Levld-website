@@ -188,3 +188,8 @@ footer small{color:var(--ink-soft);font-size:13px}
 @media(max-width:340px){
   .hero{padding-top:112px}
 }
+@media(max-width:360px){
+  .showcase .phone{transform:none;margin-bottom:0;width:240px;height:490px;padding:10px;border-radius:44px}
+  .showcase .phone .island{width:77px;height:22px;top:19px}
+  .showcase .screen{border-radius:34px}
+}
