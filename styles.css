@@ -37,6 +37,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:8
 .mark .dot{width:15px;height:15px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 5px rgba(255,185,61,.22)}
 .nav-cta{font-weight:600;font-size:17px;padding:13px 23px;border:2px solid var(--ink);border-radius:100px;transition:.25s}
 .nav-cta:hover{background:var(--ink);color:var(--paper)}
+.nav-howto{display:none}
+.footer-contact{display:none}
 
 /* hero */
 header{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
@@ -138,9 +140,12 @@ section{position:relative;padding:120px 0}
 
 /* waitlist form */
 .waitlist-form{display:flex;flex-direction:column;gap:14px;margin-top:4px}
+.waitlist-form[hidden],.waitlist-success[hidden]{display:none}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .field{display:flex;flex-direction:column;gap:7px;text-align:left;min-width:0}
 .field label{font-size:13px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em}
+.field label .opt{font-weight:500;color:var(--ink-soft);opacity:.6}
+.field input::placeholder{color:var(--ink-soft);opacity:.45}
 .field input{font-family:var(--body);font-size:16px;font-weight:500;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;width:100%;transition:border-color .2s,background .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
 .field input:focus{outline:none;border-color:var(--ink);background:#fff;box-shadow:0 0 0 4px rgba(22,19,14,.06)}
 .field input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px var(--paper) inset;-webkit-text-fill-color:var(--ink)}
@@ -178,6 +183,9 @@ footer small{color:var(--ink-soft);font-size:13px}
   section{padding:84px 0}
   .price-card{padding:44px 22px}
   .card-heading{font-size:38px}
+  .nav-howto{display:inline-flex}
+  .nav-contact{display:none}
+  .footer-contact{display:flex;width:fit-content;margin:0 auto 16px}
 }
 @media(max-width:520px){
   .field-row{grid-template-columns:1fr}

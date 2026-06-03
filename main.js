@@ -15,9 +15,10 @@ if(waitlistForm){
       firstName:waitlistForm.firstName.value.trim(),
       lastName:waitlistForm.lastName.value.trim(),
       email:waitlistForm.email.value.trim().toLowerCase(),
+      phone:waitlistForm.phone.value.trim(),
     };
-    if(!data.firstName||!data.lastName||!data.email){
-      showError('Please fill in all three fields.');
+    if(!data.firstName||!data.email){
+      showError('Please enter your first name and email.');
       return;
     }
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){
