@@ -7,7 +7,6 @@ const WAITLIST_ENDPOINT='https://cbgmxppoazlujdzefgss.supabase.co/functions/v1/j
 
 const waitlistForm=document.getElementById('waitlistForm');
 if(waitlistForm){
-  const success=document.getElementById('waitlistSuccess');
   const errEl=document.getElementById('formError');
   const submitBtn=waitlistForm.querySelector('button[type="submit"]');
   const showError=(msg)=>{errEl.textContent=msg;errEl.hidden=false};
@@ -43,8 +42,9 @@ if(waitlistForm){
         if(submitBtn){submitBtn.disabled=false;submitBtn.textContent=origLabel;}
         return;
       }
-      waitlistForm.hidden=true;
-      success.hidden=false;
+      // Redirect to the tracked thank-you page so DataFast records the conversion.
+      window.location.href='/joined';
+      return;
     }catch{
       showError('Network error. Please check your connection and try again.');
       if(submitBtn){submitBtn.disabled=false;submitBtn.textContent=origLabel;}
