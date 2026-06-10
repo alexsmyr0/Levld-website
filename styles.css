@@ -159,6 +159,12 @@ section{position:relative;padding:120px 0}
 footer{background:var(--paper);padding:40px 0 60px;text-align:center;border-top:1px solid var(--line)}
 footer .mark{justify-content:center;margin-bottom:12px}
 footer small{color:var(--ink-soft);font-size:13px}
+.footer-legal{margin-top:14px;display:flex;justify-content:center;align-items:center;gap:10px;font-size:13px;color:var(--ink-soft)}
+.footer-legal a{color:var(--ink-soft);text-decoration:none}
+.footer-legal a:hover{color:var(--ink)}
+.form-fineprint{margin:10px 0 0;text-align:center;font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
+.form-fineprint a{color:var(--ink-soft);text-decoration:underline;text-underline-offset:2px}
+.form-fineprint a:hover{color:var(--ink)}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
